@@ -49,7 +49,7 @@ id find_itemname(LSSharedFileListRef sflRef, NSString *name)
 // Return the new index of the item added.
 int sidebar_add(NSString *name, NSURL *uri, id after)
 {
-    LSSharedFileListRef sflRef = LSSharedFileListCreate(kCFAllocatorDefault, kLSSharedFileListFavoriteItems, NULL);
+    LSSharedFileListRef sflRef = LSSharedFileListCreate(kCFAllocatorDefault, kLSSharedFileListFavoriteVolumes, NULL);
     if (!sflRef) {
         printf("Unable to create sidebar list, LSSharedFileListCreate() fails.");
         return 2;
@@ -64,7 +64,7 @@ int sidebar_add(NSString *name, NSURL *uri, id after)
 // Remove named item from the sidebar
 int sidebar_remove(NSString *name, NSURL *uri)
 {
-    LSSharedFileListRef sflRef = LSSharedFileListCreate(kCFAllocatorDefault, kLSSharedFileListFavoriteItems, NULL);
+    LSSharedFileListRef sflRef = LSSharedFileListCreate(kCFAllocatorDefault, kLSSharedFileListFavoriteVolumes, NULL);
     if (!sflRef) {
         printf("Unable to create sidebar list, LSSharedFileListCreate() fails.");
         return 2;
@@ -106,7 +106,7 @@ int sidebar_remove(NSString *name, NSURL *uri)
 
 int sidebar_insert(NSString *name, NSURL *uri, id before)
 {
-    LSSharedFileListRef sflRef = LSSharedFileListCreate(kCFAllocatorDefault, kLSSharedFileListFavoriteItems, NULL);
+    LSSharedFileListRef sflRef = LSSharedFileListCreate(kCFAllocatorDefault, kLSSharedFileListFavoriteVolumes, NULL);
     if (!sflRef) {
         printf("Unable to create sidebar list, LSSharedFileListCreate() fails.");
         return 2;
@@ -120,7 +120,7 @@ int sidebar_insert(NSString *name, NSURL *uri, id before)
 
 void sidebar_list()
 {
-    LSSharedFileListRef sflRef = LSSharedFileListCreate(kCFAllocatorDefault, kLSSharedFileListFavoriteItems, NULL);
+    LSSharedFileListRef sflRef = LSSharedFileListCreate(kCFAllocatorDefault, kLSSharedFileListFavoriteVolumes, NULL);
     UInt32 seed;
     
     if(!sflRef) {
